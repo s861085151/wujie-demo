@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import WujieReact from 'wujie-react';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import lifecycles from "./lifecycle";
+
+
+const { bus, setupApp, preloadApp, startApp, destroyApp } = WujieReact;
+
+/**
+ * 配置应用，主要是设置默认配置
+ * preloadApp、startApp的配置会基于这个配置做覆盖
+ */
+setupApp({
+  name: "react16",
+  url: '//local.test.inc:7019/', //hostMap("//localhost:7600/"),
+  // attrs,
+  exec: true,
+  // fetch: credentialsFetch,
+  // plugins,
+  prefix: { "prefix-dialog": "/dialog", "prefix-location": "/location" },
+  // degrade,
+  ...lifecycles,
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
