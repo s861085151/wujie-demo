@@ -21,10 +21,10 @@ export default function RanshuFinanceNode() {
     <WujieReact
       width="100%"
       height="100%"
-      name="ranshu-finance-node"
+      name="passport"
       // url={react16Url}
-      url={'http://local.test.inc:7019/page/config/15410/homeSearch'}
-      // sync={!path}
+      url={'//passport.test.inc/'}
+      sync={true}
       props={props}
     ></WujieReact>
   );
